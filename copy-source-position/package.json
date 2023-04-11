@@ -2,7 +2,8 @@
   "name": "copy-source-position",
   "displayName": "Copy Source Position",
   "description": "copy source position to your clipboad",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.52.0"
   },
@@ -15,6 +16,15 @@
   "main": "./out/extension.js",
   "publisher": "ipeng6",
   "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "group": "9_cutcopypaste",
+          "when": "editorTextFocus",
+          "command": "copy-source-position.copy"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "copy-source-position.copy",
